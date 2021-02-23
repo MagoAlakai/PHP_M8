@@ -14,51 +14,15 @@
 require_once 'tabla.php';
 require_once 'conexion.php';
 
+//Instanciar class tabla
+$tabla = new Tabla();
 
 //Consulta Select desde PHP
 $consulta = new Conexion();
 $query = mysqli_query($consulta->conectar(), "SELECT * FROM compra");
 
-//Variable para el total
-$total_producto = 0;
-$total_global = 0;
-
-echo '<div class="container mt-5">';
-echo '<h3 class="mb-4 text-center">Table de Compras</h3>';
-echo '<table class="table table-hover table-responsive justify-content-center">';
-echo '<tr><th class="text-center">#</th><th class="text-center">Nombre</th><th class="text-center">Cantidad</th><th class="text-center">Precio</th><th class="text-center">Total</th></tr>';
-
-while($compra = mysqli_fetch_assoc($query)){
-    echo '<tr>';
-    echo '<td class="text-center">';
-    echo $compra['compra_id'];
-    echo '</td>';
-    echo '<td class="text-center">';
-    echo $compra['compra_nombre'];
-    echo '</td>';
-    echo '<td class="text-center">';
-    echo $compra['compra_cantidad'];
-    echo '</td>';
-    echo '<td class="text-center">';
-    echo $compra['compra_precio'].'€';
-    echo '</td>';
-    $total_producto= ($compra['compra_precio'] * $compra['compra_cantidad']);
-    echo '<td class="text-center">';
-    echo "$total_producto".' €';
-    echo '</td>';
-    echo '</tr>';
-    $total_global += $total_producto;
-};
-
-echo '<td colspan="4" class="text-center">';
-echo '<strong>TOTAL</strong>';
-echo '</td>';
-echo '<td class="text-center">';
-echo "<strong>$total_global".' €</strong>';
-echo '</td>';
-echo '</table>';
-echo '</div>';
-
+//Llamar al metodo en class tabla para mostrarla
+$tabla->mostrar_tabla($query);
 
 ?>
     
