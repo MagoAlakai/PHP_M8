@@ -17,7 +17,6 @@
     </form>
 </div>
 
-
 <?php
 require_once 'tabla.php';
 require_once 'conexion.php';

@@ -1,5 +1,6 @@
 <?php
 require_once 'conexion.php';
+require_once 'index.php';
 
 //Consulta Select desde PHP
 $consulta = new Conexion();
@@ -13,7 +14,7 @@ class Tabla{
     public function header_tabla(){
         echo '<div class="container">';
         echo '<table class="table table-hover table-responsive justify-content-center">';
-        echo '<tr><th class="text-center">#</th><th class="text-center">Nombre</th><th class="text-center">Cantidad</th><th class="text-center">Precio</th><th class="text-center">Total</th></tr>';
+        echo '<tr><th class="text-center">#</th><th class="text-center">Nombre</th><th class="text-center">Cantidad</th><th class="text-center">Precio</th><th class="text-center">Total</th><th class="text-center">Acciones</th></tr>';
     }
 
     public function body_tabla($query){
@@ -34,6 +35,9 @@ class Tabla{
             $this->total_producto= ($compra['compra_precio'] * $compra['compra_cantidad']);
             echo '<td class="text-center">';
             echo "$this->total_producto".' €';
+            echo '</td>';
+            echo '<td class="text-center">';
+            echo '<button class="btn btn-primary m-2"><img style="width:15px" src="./img/edit-regular.svg"></button><button class="btn btn-danger m-2"><img style="width:15px"  src="./img/trash-alt-regular.svg"></button>';
             echo '</td>';
             echo '</tr>';
             $this->total_global += $this->total_producto;
