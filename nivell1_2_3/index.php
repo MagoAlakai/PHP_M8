@@ -10,16 +10,20 @@
 </head>
 <body>
 
+<div class="row mt-5 mb-4 justify-content-center">
+    <h3 class="col-8 mb-3 text-center">Tabla de Compras</h3>
+    <form class="col-2 mb-2" action="form.php">
+        <button type="submit" class="btn btn-primary">Añadir producto</button>
+    </form>
+</div>
+
+
 <?php
 require_once 'tabla.php';
 require_once 'conexion.php';
 
 //Instanciar class tabla
 $tabla = new Tabla();
-
-//Consulta Select desde PHP
-$consulta = new Conexion();
-$query = mysqli_query($consulta->conectar(), "SELECT * FROM compra");
 
 //Llamar al metodo en class tabla para mostrarla
 $tabla->mostrar_tabla($query);

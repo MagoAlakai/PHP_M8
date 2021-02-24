@@ -1,5 +1,4 @@
 <?php
-
     class Conexion{
         private $servidor = 'localhost';
         private $usuario = 'root';
@@ -16,12 +15,5 @@
             return $conexion;
         }
     }
-
-    // $obj = new Conexion();
-    // if($obj->conectar()){
-    //     echo 'Conectado con éxito';
-    // }else{
-    //     echo 'Fallo conexion';
-    // }
 
 ?>
