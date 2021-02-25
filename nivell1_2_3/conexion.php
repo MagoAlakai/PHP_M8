@@ -7,12 +7,12 @@
         private $port = '3307';
 
         public function conectar(){
-            $conexion = mysqli_connect( $this->servidor, 
+            $conectar = mysqli_connect( $this->servidor, 
                                         $this->usuario,
                                         $this->password, 
                                         $this->bd,
                                         $this->port);
-            return $conexion;
+            return $conectar;
         }
     }
 
