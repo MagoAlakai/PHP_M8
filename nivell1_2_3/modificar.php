@@ -17,6 +17,7 @@
     if($modificar){
         header('Refresh: 3; URL=index.php');
         echo '<p class="mt-4 container col-7 alert alert-success agileits text-center" role="alert">El producto se ha modificado correctamente!</p>';
+        mysqli_close($conectar2);
     }else{
         echo 'Error de conexión: '.mysqli_error($modificar);
     }

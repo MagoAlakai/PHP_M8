@@ -40,7 +40,9 @@ class Tabla{
             echo '<a href="formModificar.php?id='.$compra['compra_id'].'">';
             echo '<button class="btn btn-info m-2"><img style="width:15px" src="./img/edit-regular.svg"></button>';
             echo '</a>';
+            echo '<a href="eliminar.php?id='.$compra['compra_id'].'">';
             echo '<button class="btn btn-danger m-2"><img style="width:15px"  src="./img/trash-alt-regular.svg"></button>';
+            echo '</a>';
             echo '</td>';
             echo '</tr>';
             $this->total_global += $this->total_producto;
