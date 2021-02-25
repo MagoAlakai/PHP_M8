@@ -13,7 +13,7 @@
 <div class="row mt-5 mb-4 justify-content-center">
     <h3 class="col-8 mb-3 text-center">Tabla de Compras</h3>
     <form class="col-2 mb-2" action="form.php">
-        <button type="submit" class="btn btn-primary">Añadir producto</button>
+        <button type="submit" class="btn btn-outline-primary">Añadir producto</button>
     </form>
 </div>
 

@@ -20,28 +20,28 @@ class Tabla{
     public function body_tabla($query){
         while($compra = mysqli_fetch_assoc($query)){
             echo '<tr>';
-            echo '<td class="text-center">';
+            echo '<td class="text-center align-middle">';
             echo $compra['compra_id'];
             echo '</td>';
-            echo '<td class="text-center">';
+            echo '<td class="text-center align-middle">';
             echo $compra['compra_nombre'];
             echo '</td>';
-            echo '<td class="text-center">';
+            echo '<td class="text-center align-middle">';
             echo $compra['compra_cantidad'];
             echo '</td>';
-            echo '<td class="text-center">';
+            echo '<td class="text-center align-middle">';
             echo $compra['compra_precio'].'€';
             echo '</td>';
             $this->total_producto= ($compra['compra_precio'] * $compra['compra_cantidad']);
-            echo '<td class="text-center">';
+            echo '<td class="text-center align-middle">';
             echo "$this->total_producto".' €';
             echo '</td>';
-            echo '<td class="text-center">';
+            echo '<td class="text-center align-middle">';
             echo '<a href="formModificar.php?id='.$compra['compra_id'].'">';
-            echo '<button class="btn btn-info m-2"><img style="width:15px" src="./img/edit-regular.svg"></button>';
+            echo '<button class="btn btn-outline-info m-2"><img style="width:15px" src="./img/edit-regular.svg"></button>';
             echo '</a>';
             echo '<a href="eliminar.php?id='.$compra['compra_id'].'">';
-            echo '<button class="btn btn-danger m-2"><img style="width:15px"  src="./img/trash-alt-regular.svg"></button>';
+            echo '<button class="btn btn-outline-danger m-2"><img style="width:15px"  src="./img/trash-alt-regular.svg"></button>';
             echo '</a>';
             echo '</td>';
             echo '</tr>';
